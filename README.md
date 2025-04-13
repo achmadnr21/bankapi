@@ -21,6 +21,10 @@ Dengan penerapan yang telah dilakukan, dapat dilihat bahwa:
 - Framework yang digunakan adalah Gin Gonic yang dikenal ringan dan cepat untuk membuat REST API.
 - Saat ini project ini belum memiliki implementasi DELETE endpoint pada beberapa resource seperti /branches, /account-types, /currencies, dan /accounts, namun struktur dan dependensinya sudah siap jika sewaktu-waktu diperlukan.
 - Jika ingin meringankan performa, gunakan pass by reference pada return dari repository dan usecase.
+
+## Belum Diimplementasi
+- Proses Transfer belum diimplementasi saat ini. (Soon)
+*Key: ACID, ATOMIC, Transactional DB*
 ---
 ## Database ERD
 
