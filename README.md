@@ -2,8 +2,8 @@
 # 🚀 BankAPI - Money Transfer REST API Service : A Portfolio Project
 
 BankAPI adalah RESTful API service untuk pengelolaan user, cabang, akun, mata uang, dan biaya transaksi.
-BankAPI menerapkan Dependency Injection, Domain Driven Design, dan Clean Architecture.
-Manajemen error dilakukan dengan membuat custom error type beserta fungsi untuk menentukan kode http status dari error tersebut.
+- BankAPI menerapkan Dependency Injection, Domain Driven Design, dan Clean Architecture.
+- Manajemen error dilakukan dengan membuat custom error type beserta fungsi untuk menentukan kode http status dari error tersebut.
 
 ---
 
