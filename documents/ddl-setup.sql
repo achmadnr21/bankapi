@@ -49,7 +49,7 @@ create table profile.users(
 );
 
 insert into profile.users(nik, role_id, full_name, username, email, phone, password_hash)
-values('3522150101010001','OWN', 'Achmad Nashruddin Riskynanda','achmadnr9', 'achmad.riskynanda01@gmail.com', '6285234123123', '$2a$12$ykWOHKchmO8bKNiChesPVOpAtM8KXlb8qjBCiAWv7RKp5w/hJtGb2' );
+values('3522150101010004','MNG', 'admin manager','admin123', 'rudy@gmail.com', '6285234123124', '$2a$12$TFe.3.s5X/EdhktJDEud3uNpHMqjO6NgdGNDRUhuc0dvkTPuKC5VK' );
 
 select * from profile.users;
 
@@ -98,6 +98,16 @@ values
 ('IDR', 'Indonesia Rupiah', 1.0);
 select * from account.currencies;
 
+-- TABEL SEQUENCE PER KOMB CABANG + TIPE
+CREATE TABLE account.account_sequences (
+    branch_id INTEGER NOT NULL,
+    account_type_id INTEGER NOT NULL,
+    last_sequence INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (branch_id, account_type_id),
+    FOREIGN KEY (branch_id) REFERENCES account.branches(id),
+    FOREIGN KEY (account_type_id) REFERENCES account.account_types(id)
+);
+
 CREATE TABLE account.accounts (
     id           	UUID unique PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id      	UUID NOT null,
@@ -116,6 +126,8 @@ CREATE TABLE account.accounts (
     foreign key (account_type_id) references account.account_types(id),
     foreign key (currency_id) references account.currencies(id)
 );
+
+select * from account.accounts;
 
 --schema transfer and stuff 
 drop type transfer.status;
