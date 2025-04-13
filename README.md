@@ -38,10 +38,10 @@ Terdapat penyesuaian dalam DDL terhadap ERD. Terutama dalam hal generate account
 
 ## 📌 Auth Endpoints (Public)
 
-| Method | Endpoint         | Deskripsi                   |
-|--------|------------------|-----------------------------|
-| POST   | `/auth/login`    | Login dan mendapatkan token |
-| POST   | `/auth/refresh`  | Refresh JWT token           |
+| Method | Endpoint         | Payload                     |Deskripsi                   |
+|--------|------------------|-----------------------------|----------------------------|
+| POST   | `/auth/login`    | `{"username":"val", "username":"val"}`|Login dan mendapatkan token
+| POST   | `/auth/refresh`  | Header `Authorization: Bearer <refresh_token>` |Refresh JWT token
 
 ---
 
