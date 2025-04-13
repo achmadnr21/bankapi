@@ -13,11 +13,13 @@ values
 
 package domain
 
+import "time"
+
 type TransactionFee struct {
-	ID        string  `json:"id" db:"id"`
-	Name      string  `json:"name" db:"name"`
-	Fee       float64 `json:"fee" db:"fee"`
-	CreatedAt string  `json:"created_at" db:"created_at"`
+	ID        string    `json:"id" db:"id"`
+	Name      string    `json:"name" db:"name"`
+	Fee       float64   `json:"fee" db:"fee"`
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
 }
 
 type TransactionFeeRepository interface {
