@@ -24,6 +24,7 @@ Dengan penerapan yang telah dilakukan, dapat dilihat bahwa:
 
 ## Belum Diimplementasi
 - Proses Transfer belum diimplementasi saat ini. (Soon)
+<br>
 *Key: ACID, ATOMIC, Transactional DB*
 ---
 ## Database ERD
