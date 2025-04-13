@@ -92,7 +92,12 @@ func (h *TransactionFeeHandler) UpdateTransactionFee(c *gin.Context) {
 }
 func (h *TransactionFeeHandler) DeleteTransactionFee(c *gin.Context) {
 	id := c.Param("id")
-	err := h.uc.DeleteTransactionFee(id)
+	user_id, exists := c.Get("user_id")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, utils.ResponseError("User not found"))
+		return
+	}
+	err := h.uc.DeleteTransactionFee(user_id.(string), id)
 	if err != nil {
 		c.JSON(utils.GetHTTPErrorCode(err), utils.ResponseError(err.Error()))
 		return

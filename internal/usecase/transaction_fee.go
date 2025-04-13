@@ -114,8 +114,21 @@ func (uc *TransactionFeeUsecase) UpdateTransactionFee(proposerId string, transac
 	}
 	return updatedTransactionFee, nil
 }
-func (uc *TransactionFeeUsecase) DeleteTransactionFee(id string) error {
-	err := uc.repo.Delete(id)
+func (uc *TransactionFeeUsecase) DeleteTransactionFee(proposerId, id string) error {
+	// Check if the user is allowed to delete the transaction fee
+	user, err := uc.UserRepo.FindByID(proposerId)
+	if err != nil {
+		return &utils.NotFoundError{Message: "User not found"}
+	}
+	userRole, err := uc.UserRoleRepo.FindByID(user.RoleID)
+	if err != nil {
+		return &utils.NotFoundError{Message: "User role not found"}
+	}
+	if !userRole.CanAddAccountTypes {
+		return &utils.UnauthorizedError{Message: "User is not authorized to delete transaction fees"}
+	}
+	// Start deleting the transaction fee
+	err = uc.repo.Delete(id)
 	if err != nil {
 		return &utils.InternalServerError{Message: err.Error()}
 	}
