@@ -23,9 +23,11 @@ Dengan penerapan yang telah dilakukan, dapat dilihat bahwa:
 - Jika ingin meringankan performa, gunakan pass by reference pada return dari repository dan usecase.
 
 ## Belum Diimplementasi
-- Proses Transfer belum diimplementasi saat ini. (Soon)
-</br>
-*Key: ACID, ATOMIC, Transactional DB*
+- Proses Transfer belum diimplementasi saat ini. (Soon)  
+<br>
+
+**Key:** ACID, ATOMIC, Transactional DB
+
 ---
 ## Database ERD
 
