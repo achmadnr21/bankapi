@@ -4,6 +4,10 @@ BankAPI adalah RESTful API service untuk pengelolaan user, cabang, akun, mata ua
 - BankAPI menerapkan Dependency Injection, Domain Driven Design, dan Clean Architecture.
 - Manajemen error dilakukan dengan membuat custom error type beserta fungsi untuk menentukan kode http status dari error tersebut.
 ---
+## Database ERD
+
+Terdapat penyesuaian dalam DDL terhadap ERD. Terutama dalam hal generate account number yang memerlukan entitas baru sebagai provider nomor urutan.
+
 ![Database ERD](documents/bank_db_Physical_Export-2025-04-03_06-33.png)
 ---
 
