@@ -1,3 +1,8 @@
+/*
+Welcome to BankAPI
+This is a simple REST API for managing bank accounts, users, branches, and transaction fees.
+It is built using Go and Gin framework.
+*/
 package main
 
 import (
