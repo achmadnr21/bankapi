@@ -38,8 +38,8 @@ Terdapat penyesuaian dalam DDL terhadap ERD. Terutama dalam hal generate account
 
 ## 📌 Auth Endpoints (Public)
 
-| Method | Endpoint         | Payload                     |Deskripsi                   |
-|--------|------------------|-----------------------------|----------------------------|
+| Method | Endpoint         | Payload                     | Deskripsi                   |
+|--------|------------------|-----------------------------|-----------------------------|
 | POST   | `/auth/login`    | `{"username":"val", "username":"val"}`|Login dan mendapatkan token
 | POST   | `/auth/refresh`  | Header `Authorization: Bearer <refresh_token>` |Refresh JWT token
 
@@ -47,11 +47,11 @@ Terdapat penyesuaian dalam DDL terhadap ERD. Terutama dalam hal generate account
 
 ## 👤 User Endpoints (Private - JWT Required)
 
-| Method | Endpoint             | Deskripsi                 |
-|--------|----------------------|---------------------------|
-| GET    | `/users/search`      | Cari user berdasarkan NIK |
-| POST   | `/users`             | Tambah user baru          |
-| GET    | `/users/:nik`        | Ambil user berdasarkan NIK|
+| Method | Endpoint             | Payload                   | Deskripsi                 |
+|--------|----------------------|---------------------------|---------------------------|
+| GET    | `/users/search`      | `{ "username": "val", "nik": "val", "email": "val"}` | Cari user berdasarkan username atau email atau nik
+| POST   | `/users`             | `{"nik" : "3522150101010003","full_name": "Achmad Nashruddin Riskynanda","username": "achmad999","email": "achmad.riskynanda01@gmail.com","phone": "6285231236788","password": "user1234"}` | Tambah user baru
+| GET    | `/users/:nik`        | | Ambil user berdasarkan NIK
 
 ---
 
